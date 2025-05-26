@@ -1,0 +1,134 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# AbComm AI Project Rules
+
+## Documentation Requirements
+
+### 1. Progress Documentation
+- Create a dedicated progress document at project initiation
+- Update the progress document at the end of each workday
+- Include completed tasks, challenges encountered, and solutions implemented
+- Document all key decisions with rationale
+- Track progress against timeline milestones
+- Flag any delays or blockers immediately with proposed solutions
+- Use a consistent format for each entry (date, tasks, status, next steps)
+- Store progress documentation in a designated location accessible to all team members
+
+### 2. System Flow Documentation
+- Create an initial system flow diagram before development begins
+- Document all components, data flows, and integration points
+- Update flow documentation whenever architecture changes
+- Include sequence diagrams for critical user journeys
+- Maintain separate flow diagrams for each phase of development
+- Document API interfaces between components
+- Include error handling and fallback procedures
+- Review flow documentation with all team members before implementation
+
+### 3. Test Documentation & Quality Assurance
+- Create test cases before implementing any feature
+- Implement unit tests for all core functions
+- Develop integration tests for component interactions
+- Create end-to-end tests for critical user flows
+- Document test coverage metrics
+- Maintain a test log showing pass/fail status
+- No feature can proceed to the next phase without passing all tests
+- Update test documentation when requirements change
+
+## Development Workflow Rules
+
+### 1. Phase Progression
+- Complete all required documentation before starting development
+- Implement features according to priority within each phase
+- Conduct code reviews for all implementations
+- Execute all tests before phase completion
+- Obtain stakeholder sign-off before advancing to next phase
+- Conduct retrospective at the end of each phase to document learnings
+
+### 2. Feature Implementation
+- Break features into manageable tasks
+- Estimate time for each task before beginning work
+- Follow consistent coding standards
+- Document any deviations from planned implementation
+- Create feature-specific documentation for complex implementations
+- Test each feature in isolation before integration
+
+### 3. Quality Standards
+- Maintain code quality metrics (linting, formatting)
+- Ensure accessibility compliance for all UI components
+- Implement error handling for all user inputs and API calls
+- Follow security best practices for all implementations
+- Optimize performance for critical user journeys
+- Meet or exceed all success criteria defined for each phase
+
+## Communication Rules
+
+### 1. Team Communication
+- Daily updates on progress and blockers
+- Weekly team review of progress documentation
+- Immediate notification of any critical issues
+- Document all technical decisions in a decision log
+- Share knowledge and solutions for common problems
+
+### 2. Stakeholder Communication
+- Provide demo access to stakeholders at each phase completion
+- Document stakeholder feedback systematically
+- Prioritize changes based on stakeholder input
+- Follow the communication plan outlined in the Development Plan
+- Create user-friendly documentation for stakeholder testing
+
+## Specific AI Implementation Rules
+
+### 1. Model Usage
+- Document all prompt engineering techniques
+- Version control prompts and model configurations
+- Test model outputs against benchmark datasets
+- Implement monitoring for model performance
+- Document any fine-tuning parameters and results
+
+### 2. Data Handling
+- Ensure secure handling of all incident data
+- Implement appropriate data anonymization for testing
+- Document data retention policies
+- Create data flow diagrams for AI model inputs/outputs
+- Test edge cases for AI generation
+
+## Deliverable Rules
+
+### 1. Code Quality
+- All code must pass linting and formatting checks
+- Documentation must be provided for all functions
+- Dependencies must be explicitly declared with versions
+- Code must follow the project's architectural patterns
+
+### 2. User Experience
+- All UI components must be tested for usability
+- User documentation must be updated with each release
+- Performance must meet defined benchmarks
+- UI must be responsive across target devices
+
+## Phase-Specific Rules
+
+### Phase 1 (MVP)
+- Create simplified test suite that covers core functionality
+- Document all API calls to GeminiAPI
+- Create initial system flow diagram focusing on core user journey
+- Implement basic error handling and fallbacks
+- Ensure all MVP features can function independently
+
+### Phase 2 (Enhancement)
+- Expand test suite to cover new interactive features
+- Document architectural changes during Streamlit to React migration
+- Create component interaction diagrams for new features
+- Implement comprehensive error handling
+- Document brand alignment scoring methodology
+
+### Phase 3 (Advanced)
+- Implement end-to-end testing automation
+- Create comprehensive API documentation for all endpoints
+- Document integration points with external systems
+- Create performance benchmarks and testing protocols
+
+- Implement monitoring solutions with alerting 

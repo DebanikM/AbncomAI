@@ -1,0 +1,11 @@
+2025-05-26 16:36:12,888 - INFO - Environment variables loaded.
+2025-05-26 16:36:12,889 - INFO - Streamlit page configured.
+2025-05-26 16:36:12,902 - INFO - Form submitted. Collecting incident data.
+2025-05-26 16:36:12,902 - INFO - Incident data collected: {'severity': 'P2 - Medium', 'impacted_services': ['Email Analysis', 'Account Protection', 'Dashboard'], 'customer_impact': '', 'root_cause': '', 'mitigation': '', 'eta': '', 'message_type': 'Initial notification', 'tone': 'Semi-technical'}
+2025-05-26 16:36:12,904 - INFO - Generating message using Gemini...
+2025-05-26 16:36:18,320 - INFO - Environment variables loaded.
+2025-05-26 16:36:18,350 - INFO - Streamlit page configured.
+2025-05-26 16:36:18,534 - INFO - App finished rendering.
+2025-05-26 16:36:21,012 - INFO - Message generated successfully.
+2025-05-26 16:36:21,014 - INFO - Displaying generated message and metrics.
+2025-05-26 16:36:21,018 - INFO - App finished rendering.

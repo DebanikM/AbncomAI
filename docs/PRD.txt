@@ -1,0 +1,122 @@
+# Product Requirements Document (PRD)
+
+## Product Name
+
+AbComm AI – Incident Messaging Assistant
+
+## Overview
+
+The AbComm AI tool automates the creation of incident communication updates using Gemini's Flash-4 to streamline customer-facing messaging during technical incidents. The solution is designed to reduce manual effort, enhance clarity, ensure consistency, and integrate smoothly into existing incident management workflows at Abnormal Security.
+
+## Goals and Objectives
+
+### Primary Goals:
+
+* Automate incident message drafting to minimize response time.
+* Ensure consistently clear, professional, and compliant messaging.
+* Reduce operational overhead for incident teams.
+
+### Objectives:
+
+* Reduce time-to-message by at least 50%.
+* Achieve over 90% adoption rate among incident commanders.
+* Maintain high customer satisfaction scores (NPS ≥ 8.5) for incident communications.
+
+## Users and Stakeholders
+
+* **Incident Commanders**
+* **Engineering Leads**
+* **Customer Support Managers**
+* **Marketing/Comms Team**
+
+## Functional Requirements
+
+### Phase 1: MVP
+
+* **Incident Input Form**: severity, impacted services, customer impact, root cause, mitigation steps, ETA, message type, and tone.
+* **AI Message Generation**: Leverage Flash-4 API to generate concise customer-facing updates.
+* **Clarity and Tone Scoring**: Integrate Textstat for message clarity analysis.
+* **Status Page Preview**: Mock-up resembling Abnormal's existing status page.
+* **Download/Export Functionality**: Ability to download generated messages.
+
+### Phase 2: Enhancement
+
+* **Interactive AI Copilot**: Real-time collaboration and prompt refinement via chat-like interface.
+* **Severity-based Dynamic Templates**: Adjust message structure based on severity level.
+* **Brand Alignment Scoring**: Automated scoring of generated messages against Abnormal’s tone guidelines.
+* **Slack and Email Integration Previews**: Render messages formatted for internal Slack and external email.
+
+### Phase 3: Advanced Features
+
+* **Real-Time Incident Timer**: Workflow simulation and urgency awareness during incidents.
+* **Prompt Library**: Curated set of reusable templates (initial, ongoing, resolved notices).
+* **Log Integration**: Auto-parsing and extraction from logs into structured fields.
+
+## Technical Requirements
+
+### Tech Stack:
+
+* **Frontend**: Streamlit (MVP), ReactJS (Future phases)
+* **Backend**: Python, FastAPI (future enhancements)
+* **AI Integration**: Gemini Flash-4 API
+* **Deployment**: Streamlit Cloud (initial MVP), AWS or Vercel (advanced phases)
+
+### Key Files and Structure (MVP):
+
+```
+abcomm-ai-tool/
+├── .env
+├── app.py
+└── requirements.txt
+```
+
+### Methods and Logic (MVP):
+
+* `load_dotenv()` to securely load environment variables.
+* `Gemini.ChatCompletion.create()` for generating AI-based messages.
+* Streamlit forms for structured input handling.
+* Textstat library for message clarity and readability analysis.
+
+## User Interface
+
+* Clean, intuitive input form
+* AI-generated message preview
+* Clear message quality scoring indicators
+* Status Page styled message preview for realistic context
+* Downloadable message button
+
+## Success Metrics
+
+* Average message creation time reduced by 50%
+* High adoption rate among Incident Commanders (>90%)
+* Positive feedback from stakeholders (NPS ≥ 8.5)
+
+## Future Considerations
+
+* Security and compliance reviews
+* Integration into internal authentication (OAuth)
+* Expanded analytics and reporting dashboard
+
+## Deployment Roadmap
+
+* **Phase 1 (Immediate MVP)**: Streamlit deployment within 1 week.
+* **Phase 2 (Interactive Enhancements)**: Begin after MVP review, estimated timeline 2-4 weeks.
+* **Phase 3 (Advanced Features)**: Begin after Phase 2 review, estimated timeline 4-6 weeks.
+
+## Risk Management
+
+* Ensure secure API key management.
+* Regular validation of message quality and compliance.
+* Frequent stakeholder feedback cycles.
+
+## Testing and Validation
+
+* Functional testing of all inputs and outputs.
+* Usability testing with Incident Commanders.
+* Regular reviews with stakeholders to validate alignment with operational requirements.
+
+## Documentation and Support
+
+* Comprehensive README for setup and deployment.
+* Inline code comments for clarity.
+* User guide for stakeholders on operational usage.
