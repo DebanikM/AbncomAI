@@ -677,3 +677,116 @@
 2025-05-26 19:03:13,743 - INFO - Message generated successfully.
 2025-05-26 19:03:13,745 - INFO - Displaying generated message and metrics from session state.
 2025-05-26 19:03:13,748 - INFO - App finished rendering.
+2025-05-26 19:04:34,331 - INFO - Environment variables loaded.
+2025-05-26 19:04:34,337 - INFO - Form submitted. Collecting incident data.
+2025-05-26 19:04:34,337 - INFO - Incident data collected: {'severity': 'P0 - Critical', 'impacted_services': [], 'customer_impact': '', 'root_cause': '', 'mitigation': 'asdsa', 'eta': '', 'message_type': 'Initial notification', 'tone': 'Semi-technical'}
+2025-05-26 19:04:34,338 - INFO - Generating message using Gemini...
+2025-05-26 19:04:45,646 - INFO - Message generated successfully.
+2025-05-26 19:05:14,390 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:14,392 - INFO - App finished rendering.
+2025-05-26 19:05:52,187 - INFO - Environment variables loaded.
+2025-05-26 19:05:52,195 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:52,204 - INFO - App finished rendering.
+2025-05-26 19:05:52,496 - INFO - Environment variables loaded.
+2025-05-26 19:05:52,502 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:52,511 - INFO - App finished rendering.
+2025-05-26 19:05:53,136 - INFO - Environment variables loaded.
+2025-05-26 19:05:53,143 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:53,153 - INFO - App finished rendering.
+2025-05-26 19:05:53,523 - INFO - Environment variables loaded.
+2025-05-26 19:05:53,530 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:53,538 - INFO - App finished rendering.
+2025-05-26 19:05:53,671 - INFO - Environment variables loaded.
+2025-05-26 19:05:53,679 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:53,688 - INFO - App finished rendering.
+2025-05-26 19:05:53,804 - INFO - Environment variables loaded.
+2025-05-26 19:05:53,811 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:53,820 - INFO - App finished rendering.
+2025-05-26 19:05:53,950 - INFO - Environment variables loaded.
+2025-05-26 19:05:53,958 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:53,966 - INFO - App finished rendering.
+2025-05-26 19:05:54,084 - INFO - Environment variables loaded.
+2025-05-26 19:05:54,093 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:54,101 - INFO - App finished rendering.
+2025-05-26 19:05:54,230 - INFO - Environment variables loaded.
+2025-05-26 19:05:54,237 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:54,246 - INFO - App finished rendering.
+2025-05-26 19:05:54,364 - INFO - Environment variables loaded.
+2025-05-26 19:05:54,371 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:54,381 - INFO - App finished rendering.
+2025-05-26 19:05:54,497 - INFO - Environment variables loaded.
+2025-05-26 19:05:54,507 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:54,515 - INFO - App finished rendering.
+2025-05-26 19:05:54,643 - INFO - Environment variables loaded.
+2025-05-26 19:05:54,650 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:54,658 - INFO - App finished rendering.
+2025-05-26 19:05:54,801 - INFO - Environment variables loaded.
+2025-05-26 19:05:54,808 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:54,818 - INFO - App finished rendering.
+2025-05-26 19:05:54,937 - INFO - Environment variables loaded.
+2025-05-26 19:05:54,945 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:54,953 - INFO - App finished rendering.
+2025-05-26 19:05:55,070 - INFO - Environment variables loaded.
+2025-05-26 19:05:55,079 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:55,087 - INFO - App finished rendering.
+2025-05-26 19:05:55,210 - INFO - Environment variables loaded.
+2025-05-26 19:05:55,219 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:55,229 - INFO - App finished rendering.
+2025-05-26 19:05:55,338 - INFO - Environment variables loaded.
+2025-05-26 19:05:55,345 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:55,352 - INFO - App finished rendering.
+2025-05-26 19:05:55,496 - INFO - Environment variables loaded.
+2025-05-26 19:05:55,503 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:55,513 - INFO - App finished rendering.
+2025-05-26 19:05:55,631 - INFO - Environment variables loaded.
+2025-05-26 19:05:55,641 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:55,650 - INFO - App finished rendering.
+2025-05-26 19:05:55,766 - INFO - Environment variables loaded.
+2025-05-26 19:05:55,775 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:55,781 - INFO - App finished rendering.
+2025-05-26 19:05:55,924 - INFO - Environment variables loaded.
+2025-05-26 19:05:55,931 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:55,940 - INFO - App finished rendering.
+2025-05-26 19:05:56,084 - INFO - Environment variables loaded.
+2025-05-26 19:05:56,096 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:56,110 - INFO - App finished rendering.
+2025-05-26 19:05:56,244 - INFO - Environment variables loaded.
+2025-05-26 19:05:56,252 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:56,260 - INFO - App finished rendering.
+2025-05-26 19:05:56,418 - INFO - Environment variables loaded.
+2025-05-26 19:05:56,428 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:56,437 - INFO - App finished rendering.
+2025-05-26 19:05:56,550 - INFO - Environment variables loaded.
+2025-05-26 19:05:56,558 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:56,567 - INFO - App finished rendering.
+2025-05-26 19:05:56,670 - INFO - Environment variables loaded.
+2025-05-26 19:05:56,679 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:05:56,689 - INFO - App finished rendering.
+2025-05-26 19:06:12,183 - INFO - Environment variables loaded.
+2025-05-26 19:06:12,190 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:06:12,198 - INFO - App finished rendering.
+2025-05-26 19:07:03,035 - INFO - Environment variables loaded.
+2025-05-26 19:07:03,042 - INFO - Form submitted. Collecting incident data.
+2025-05-26 19:07:03,042 - INFO - Incident data collected: {'severity': 'P0 - Critical', 'impacted_services': [], 'customer_impact': '', 'root_cause': '', 'mitigation': 'asdsa', 'eta': '', 'message_type': 'Initial notification', 'tone': 'Semi-technical'}
+2025-05-26 19:07:03,043 - INFO - Generating message using Gemini...
+2025-05-26 19:07:14,133 - INFO - Message generated successfully.
+2025-05-26 19:07:14,135 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:07:14,138 - INFO - App finished rendering.
+2025-05-26 19:08:13,999 - INFO - Environment variables loaded.
+2025-05-26 19:08:14,007 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:08:14,016 - INFO - App finished rendering.
+2025-05-26 19:09:31,835 - INFO - Environment variables loaded.
+2025-05-26 19:09:31,844 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:09:31,852 - INFO - App finished rendering.
+2025-05-26 19:09:35,572 - INFO - Environment variables loaded.
+2025-05-26 19:09:35,581 - INFO - App finished rendering.
+2025-05-26 19:09:37,523 - INFO - Environment variables loaded.
+2025-05-26 19:09:37,529 - INFO - Form submitted. Collecting incident data.
+2025-05-26 19:09:37,529 - INFO - Incident data collected: {'severity': 'P0 - Critical', 'impacted_services': [], 'customer_impact': '', 'root_cause': '', 'mitigation': '', 'eta': '', 'message_type': 'Initial notification', 'tone': 'Semi-technical'}
+2025-05-26 19:09:37,530 - INFO - Generating message using Gemini...
+2025-05-26 19:09:48,611 - INFO - Message generated successfully.
+2025-05-26 19:09:48,613 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:09:48,618 - INFO - App finished rendering.
+2025-05-26 19:09:50,831 - INFO - Environment variables loaded.
+2025-05-26 19:09:50,839 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:09:50,849 - INFO - App finished rendering.

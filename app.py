@@ -182,6 +182,25 @@ with col2:
         st.metric("Technical Level", f"{technical}/100 ({level})")
         st.progress(technical/100, "Technical Level")
         
+        # Display LLM-based quality metrics
+        st.markdown("### LLM Judgments")
+
+        # Readability Score LLM
+        readability_llm = analysis_results_from_state.get("readability_llm", 0)
+        st.metric("Readability (LLM)", f"{readability_llm}/100")
+        st.progress(readability_llm/100, "Readability (LLM)")
+
+        # Clarity Score LLM
+        clarity_llm = analysis_results_from_state.get("clarity_llm", 0)
+        st.metric("Clarity (LLM)", f"{clarity_llm}/100")
+        st.progress(clarity_llm/100, "Clarity (LLM)")
+
+        # Technical Level LLM with classification
+        technical_llm = analysis_results_from_state.get("technical_level_llm", 0)
+        level_llm = "General" if technical_llm < 30 else "Semi-Tech" if technical_llm < 70 else "Technical"
+        st.metric("Technical Level (LLM)", f"{technical_llm}/100 ({level_llm})")
+        st.progress(technical_llm/100, "Technical Level (LLM)")
+
         # Status page preview
         st.markdown("### Status Page Preview")
         # Use triple single quotes for the HTML string to avoid markdown interpretation and concatenation issues
@@ -269,10 +288,9 @@ with col2:
             )
         
         with col_html:
-            html_version = f"<html><body>{formatted_message_from_state}</body></html>"
             st.download_button(
                 label="Download HTML",
-                data=html_version,
+                data=html_preview,
                 file_name="incident_message.html",
                 mime="text/html"
             )
