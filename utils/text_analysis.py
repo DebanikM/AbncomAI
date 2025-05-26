@@ -2,12 +2,13 @@ import textstat
 import re
 from typing import Dict, Any
 
-def analyze_text(text: str) -> Dict[str, Any]:
+def analyze_text(text: str, tone: str = "General audience") -> Dict[str, Any]:
     """
     Analyze the quality of the text based on readability, clarity, and technical level.
     
     Args:
         text: The text to analyze
+        tone: Communication tone ("General audience", "Semi-technical", or "Technical")
         
     Returns:
         Dictionary containing analysis metrics
@@ -26,7 +27,7 @@ def analyze_text(text: str) -> Dict[str, Any]:
     clarity_score = calculate_clarity_score(text)
     results["clarity"] = clarity_score
     
-    # Calculate technical level (based on jargon and complexity)
+    # Calculate technical level (now using tone parameter)
     technical_level = calculate_technical_level(text)
     results["technical_level"] = technical_level
     
@@ -72,15 +73,9 @@ def calculate_clarity_score(text: str) -> float:
 
 def calculate_technical_level(text: str) -> float:
     """
-    Calculate the technical level based on jargon, acronyms, etc.
-    
-    Args:
-        text: The text to analyze
-        
-    Returns:
-        Technical level score between 0-100 (higher = more technical)
+    Calculate the technical level based on jargon and acronyms.
+    Returns score between 0-100 with better distribution.
     """
-    # List of technical terms related to Abnormal Security
     technical_terms = [
         "API", "authentication", "authorization", "bandwidth", "backend", "cache",
         "CDN", "certificate", "client", "cluster", "configuration", "CPU", "daemon",
@@ -94,17 +89,12 @@ def calculate_technical_level(text: str) -> float:
         "decryption", "payload", "exploit", "credential", "authentication"
     ]
     
-    # Count technical terms
     technical_term_count = 0
     for term in technical_terms:
         technical_term_count += len(re.findall(r'\b' + re.escape(term) + r'\b', text, re.IGNORECASE))
     
-    # Count acronyms (uppercase words of 2-5 letters)
     acronym_count = len(re.findall(r'\b[A-Z]{2,5}\b', text))
     
-    # Calculate technical score based on term density
-    word_count = max(1, textstat.lexicon_count(text))
-    technical_term_density = (technical_term_count + acronym_count) / word_count
-    technical_score = min(100, technical_term_density * 500)  # Scale to 0-100
-    
-    return round(technical_score, 1) 
+    # More pronounced scoring (each term/acronym contributes more to score)
+    technical_score = min(100, (technical_term_count + acronym_count) * 5)
+    return round(technical_score) 

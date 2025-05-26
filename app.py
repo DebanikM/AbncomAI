@@ -5,6 +5,15 @@ from dotenv import load_dotenv
 from utils.gemini_utils import generate_message
 from utils.text_analysis import analyze_text
 from utils.templates import format_message
+from datetime import datetime
+import streamlit.components.v1 as components
+
+# Page configuration MUST come first
+st.set_page_config(
+    page_title="AbComm AI Assistant", 
+    page_icon="🚨",
+    layout="wide"
+)
 
 # Configure logging
 LOG_DIR = "logs"
@@ -26,20 +35,10 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 logger.info("Environment variables loaded.")
 
-# Page configuration
-st.set_page_config(
-    page_title="AbComm AI - Incident Messaging Assistant", 
-    page_icon="🚨",
-    layout="wide"
-)
-
-logger.info("Streamlit page configured.")
-
 # App title and description
-st.title("AbComm AI - Incident Messaging Assistant")
+st.title("AbComm AI Assistant")
 st.markdown("""
-    Generate professional customer-facing incident messages with AI assistance.
-    This tool helps create clear, appropriate communications for service incidents.
+    Built for responders. Tuned for customers.
 """)
 
 # Main layout with two columns
@@ -136,7 +135,7 @@ if submit_button:
         logger.info("Message generated successfully.")
         
         # Analyze the text quality
-        analysis_results = analyze_text(generated_message)
+        analysis_results = analyze_text(generated_message, tone=incident_data["tone"])
         
         # Format message according to template
         formatted_message = format_message(generated_message, incident_data)
@@ -149,32 +148,105 @@ with col2:
         logger.info("Displaying generated message and metrics.")
         # Display the formatted message
         st.markdown("### Preview")
-        st.markdown(formatted_message)
+        st.markdown(generated_message)
         
         # Display quality metrics
         st.markdown("### Quality Metrics")
         
-        # Readability score
+        # Readability Score
         readability = analysis_results.get("readability", 0)
         st.metric("Readability Score", f"{readability}/100")
-        
-        # Progress bars for metrics
         st.progress(readability/100, "Readability")
-        st.progress(analysis_results.get("clarity", 0)/100, "Clarity")
-        st.progress(analysis_results.get("technical_level", 0)/100, "Technical Level")
+        
+        # Clarity Score
+        clarity = analysis_results.get("clarity", 0)
+        st.metric("Clarity Score", f"{clarity}/100")
+        st.progress(clarity/100, "Clarity")
+        
+        # Technical Level with classification
+        technical = analysis_results.get("technical_level", 0)
+        level = "General" if technical < 25 else "Semi-Tech" if technical < 60 else "Technical"
+        st.metric("Technical Level", f"{technical}/100 ({level})")
+        st.progress(technical/100, "Technical Level")
         
         # Status page preview
         st.markdown("### Status Page Preview")
-        st.markdown("""
-        <div style="border:1px solid #ddd; padding:15px; border-radius:5px; background-color:#f9f9f9;">
-            <h3 style="color:#d93025;">Abnormal Security Status</h3>
-            <div style="background-color:#fff; padding:10px; border-radius:5px; border:1px solid #eee;">
-        """, unsafe_allow_html=True)
-        st.markdown(formatted_message, unsafe_allow_html=True)
-        st.markdown("""
+        # Use triple single quotes for the HTML string to avoid markdown interpretation and concatenation issues
+        html_preview = f'''
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; background-color: #f8f9fa; font-family: 'Segoe UI', Arial, sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    <div style="display: flex; flex-direction: column; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background-color: {'#d93025' if 'P0' in severity else '#e65100' if 'P1' in severity else '#f9a825' if 'P2' in severity else '#4285f4'}; color: white; padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 14px;">
+                    {severity.split(' - ')[0]}
+                </span>
+                <h3 style="margin: 0; color: #202124; font-size: 18px;">
+                    Abnormal Security Status
+                </h3>
+            </div>
+            <span style="color: #5f6368; font-size: 13px;">
+                {datetime.now().strftime('%b %d, %Y %I:%M %p')} UTC
+            </span>
+        </div>
+        <!-- Severity bar with marker -->
+        <div style="width: 100%; margin-top: 15px; text-align: center;">
+            <div style="width: 80%; height: 20px; background: linear-gradient(to right, #00ff00, #ffff00, #ff9900, #ff0000); border-radius: 5px; margin: 0 auto; position: relative;">
+                <!-- Marker -->
+                <div style="
+                    position: absolute;
+                    top: -10px;
+                    width: 2px;
+                    height: 30px;
+                    background-color: black;
+                    {'left: calc(12.5% - 1px);' if 'P3' in severity else ''}
+                    {'left: calc(37.5% - 1px);' if 'P2' in severity else ''}
+                    {'left: calc(62.5% - 1px);' if 'P1' in severity else ''}
+                    {'left: calc(87.5% - 1px);' if 'P0' in severity else ''}
+                "></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; width: 80%; margin: 5px auto 0 auto;">
+                <span style="font-size: 12px;">P3 (Low)</span>
+                <span style="font-size: 12px;">P2 (Medium)</span>
+                <span style="font-size: 12px;">P1 (High)</span>
+                <span style="font-size: 12px;">P0 (Critical)</span>
             </div>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+
+    <div style="margin-bottom: 16px;">
+        <p style="margin: 0 0 8px 0; font-weight: 600; color: #202124;
+            {'border-left: 4px solid #4285f4; padding-left: 8px;' if message_type == 'Initial notification' else ''}
+            {'border-left: 4px solid #f9a825; padding-left: 8px;' if message_type == 'Status update' else ''}
+            {'border-left: 4px solid #00ff00; padding-left: 8px;' if message_type == 'Resolution notice' else ''}
+        ">
+            {message_type}
+        </p>
+        <div style="margin: 0; color: #000000; line-height: 1.5; white-space: pre-line;">
+            {generated_message.replace('**', '').replace('_', '').replace('```', '')}
+        </div>
+    </div>
+
+    <div style="background-color: #f1f3f4; border-radius: 4px; padding: 12px; margin-bottom: 16px;">
+        <p style="margin: 0 0 8px 0; font-weight: 600; color: #202124;">
+            Impacted Services
+        </p>
+        <ul style="margin: 0; padding-left: 20px; color: #000000;">
+            {"".join(f"<li>{service}</li>" for service in incident_data["impacted_services"])}
+        </ul>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 8px; color: #5f6368; font-size: 14px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 8V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Last updated: {datetime.now().strftime('%I:%M %p')} UTC</span>
+    </div>
+</div>
+'''
+        # Use components.html to display the raw HTML
+        components.html(html_preview, height=500, scrolling=True)
         
         # Download options
         st.markdown("### Export Options")

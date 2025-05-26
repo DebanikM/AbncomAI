@@ -62,6 +62,8 @@ def create_prompt(incident_data: Dict[str, Any]) -> str:
     
     Your response should be ready to use with minimal editing. 
     Do not include any explanations, just the message itself.
+    
+    **Crucially, prioritize extreme clarity and ease of understanding.** Aim for a high readability score by using very simple language, short sentences (ideally under 15-20 words), and avoiding jargon or explaining any necessary technical terms clearly. The message should be easily understood by someone with a general audience background, even if the selected tone is semi-technical or technical.
     """
     
     return prompt 
