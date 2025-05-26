@@ -140,31 +140,44 @@ if submit_button:
         # Format message according to template
         formatted_message = format_message(generated_message, incident_data)
 
+        # Store generated messages and analysis results in session state
+        st.session_state['generated_message'] = generated_message
+        st.session_state['formatted_message'] = formatted_message
+        st.session_state['analysis_results'] = analysis_results
+        st.session_state['incident_data'] = incident_data # Store incident data for formatted message/html
+
 # Display results in the second column
 with col2:
     st.subheader("Generated Message")
     
-    if submit_button:
-        logger.info("Displaying generated message and metrics.")
+    # Check if message has been generated and stored in session state
+    if 'generated_message' in st.session_state:
+        logger.info("Displaying generated message and metrics from session state.")
+        # Retrieve from session state
+        generated_message_from_state = st.session_state['generated_message']
+        formatted_message_from_state = st.session_state['formatted_message']
+        analysis_results_from_state = st.session_state['analysis_results']
+        incident_data_from_state = st.session_state['incident_data']
+
         # Display the formatted message
         st.markdown("### Preview")
-        st.markdown(generated_message)
+        st.markdown(generated_message_from_state)
         
         # Display quality metrics
         st.markdown("### Quality Metrics")
         
         # Readability Score
-        readability = analysis_results.get("readability", 0)
+        readability = analysis_results_from_state.get("readability", 0)
         st.metric("Readability Score", f"{readability}/100")
         st.progress(readability/100, "Readability")
         
         # Clarity Score
-        clarity = analysis_results.get("clarity", 0)
+        clarity = analysis_results_from_state.get("clarity", 0)
         st.metric("Clarity Score", f"{clarity}/100")
         st.progress(clarity/100, "Clarity")
         
         # Technical Level with classification
-        technical = analysis_results.get("technical_level", 0)
+        technical = analysis_results_from_state.get("technical_level", 0)
         level = "General" if technical < 25 else "Semi-Tech" if technical < 60 else "Technical"
         st.metric("Technical Level", f"{technical}/100 ({level})")
         st.progress(technical/100, "Technical Level")
@@ -177,8 +190,8 @@ with col2:
     <div style="display: flex; flex-direction: column; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="background-color: {'#d93025' if 'P0' in severity else '#e65100' if 'P1' in severity else '#f9a825' if 'P2' in severity else '#4285f4'}; color: white; padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 14px;">
-                    {severity.split(' - ')[0]}
+                <span style="background-color: {'#d93025' if 'P0' in incident_data_from_state["severity"] else '#e65100' if 'P1' in incident_data_from_state["severity"] else '#f9a825' if 'P2' in incident_data_from_state["severity"] else '#4285f4'}; color: white; padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 14px;">
+                    {incident_data_from_state["severity"].split(' - ')[0]}
                 </span>
                 <h3 style="margin: 0; color: #202124; font-size: 18px;">
                     Abnormal Security Status
@@ -192,17 +205,7 @@ with col2:
         <div style="width: 100%; margin-top: 15px; text-align: center;">
             <div style="width: 80%; height: 20px; background: linear-gradient(to right, #00ff00, #ffff00, #ff9900, #ff0000); border-radius: 5px; margin: 0 auto; position: relative;">
                 <!-- Marker -->
-                <div style="
-                    position: absolute;
-                    top: -10px;
-                    width: 2px;
-                    height: 30px;
-                    background-color: black;
-                    {'left: calc(12.5% - 1px);' if 'P3' in severity else ''}
-                    {'left: calc(37.5% - 1px);' if 'P2' in severity else ''}
-                    {'left: calc(62.5% - 1px);' if 'P1' in severity else ''}
-                    {'left: calc(87.5% - 1px);' if 'P0' in severity else ''}
-                "></div>
+                <div style="position: absolute; top: -10px; width: 2px; height: 30px; background-color: black; {'left: calc(12.5% - 1px);' if 'P3' in incident_data_from_state["severity"] else ''} {'left: calc(37.5% - 1px);' if 'P2' in incident_data_from_state["severity"] else ''} {'left: calc(62.5% - 1px);' if 'P1' in incident_data_from_state["severity"] else ''} {'left: calc(87.5% - 1px);' if 'P0' in incident_data_from_state["severity"] else ''}"></div>
             </div>
             <div style="display: flex; justify-content: space-between; width: 80%; margin: 5px auto 0 auto;">
                 <span style="font-size: 12px;">P3 (Low)</span>
@@ -214,15 +217,11 @@ with col2:
     </div>
 
     <div style="margin-bottom: 16px;">
-        <p style="margin: 0 0 8px 0; font-weight: 600; color: #202124;
-            {'border-left: 4px solid #4285f4; padding-left: 8px;' if message_type == 'Initial notification' else ''}
-            {'border-left: 4px solid #f9a825; padding-left: 8px;' if message_type == 'Status update' else ''}
-            {'border-left: 4px solid #00ff00; padding-left: 8px;' if message_type == 'Resolution notice' else ''}
-        ">
-            {message_type}
+        <p style="margin: 0 0 8px 0; font-weight: 600; color: #202124; {'border-left: 4px solid #4285f4; padding-left: 8px;' if incident_data_from_state["message_type"] == 'Initial notification' else ''} {'border-left: 4px solid #f9a825; padding-left: 8px;' if incident_data_from_state["message_type"] == 'Status update' else ''} {'border-left: 4px solid #00ff00; padding-left: 8px;' if incident_data_from_state["message_type"] == 'Resolution notice' else ''}">
+            {incident_data_from_state["message_type"]}
         </p>
         <div style="margin: 0; color: #000000; line-height: 1.5; white-space: pre-line;">
-            {generated_message.replace('**', '').replace('_', '').replace('```', '')}
+            {generated_message_from_state.replace('**', '').replace('_', '').replace('```', '')}
         </div>
     </div>
 
@@ -231,7 +230,7 @@ with col2:
             Impacted Services
         </p>
         <ul style="margin: 0; padding-left: 20px; color: #000000;">
-            {"".join(f"<li>{service}</li>" for service in incident_data["impacted_services"])}
+            {"".join(f"<li>{service}</li>" for service in incident_data_from_state["impacted_services"])}
         </ul>
     </div>
 
@@ -256,7 +255,7 @@ with col2:
         with col_txt:
             st.download_button(
                 label="Download TXT",
-                data=generated_message,
+                data=generated_message_from_state,
                 file_name="incident_message.txt",
                 mime="text/plain"
             )
@@ -264,13 +263,13 @@ with col2:
         with col_md:
             st.download_button(
                 label="Download MD",
-                data=formatted_message,
+                data=formatted_message_from_state,
                 file_name="incident_message.md",
                 mime="text/markdown"
             )
         
         with col_html:
-            html_version = f"<html><body>{formatted_message}</body></html>"
+            html_version = f"<html><body>{formatted_message_from_state}</body></html>"
             st.download_button(
                 label="Download HTML",
                 data=html_version,

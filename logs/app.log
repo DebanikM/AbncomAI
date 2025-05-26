@@ -652,3 +652,28 @@
 2025-05-26 18:57:13,150 - INFO - Message generated successfully.
 2025-05-26 18:57:13,153 - INFO - Displaying generated message and metrics.
 2025-05-26 18:57:13,156 - INFO - App finished rendering.
+2025-05-26 19:02:24,158 - INFO - Environment variables loaded.
+2025-05-26 19:02:24,164 - INFO - App finished rendering.
+2025-05-26 19:02:36,033 - INFO - Environment variables loaded.
+2025-05-26 19:02:36,039 - INFO - Form submitted. Collecting incident data.
+2025-05-26 19:02:36,039 - INFO - Incident data collected: {'severity': 'P0 - Critical', 'impacted_services': [], 'customer_impact': '', 'root_cause': '', 'mitigation': '', 'eta': '', 'message_type': 'Initial notification', 'tone': 'Semi-technical'}
+2025-05-26 19:02:36,040 - INFO - Generating message using Gemini...
+2025-05-26 19:02:45,835 - INFO - Message generated successfully.
+2025-05-26 19:02:45,837 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:02:45,840 - INFO - App finished rendering.
+2025-05-26 19:02:53,341 - INFO - Environment variables loaded.
+2025-05-26 19:02:53,347 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:02:53,351 - INFO - App finished rendering.
+2025-05-26 19:02:55,966 - INFO - Environment variables loaded.
+2025-05-26 19:02:55,973 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:02:55,977 - INFO - App finished rendering.
+2025-05-26 19:02:57,444 - INFO - Environment variables loaded.
+2025-05-26 19:02:57,449 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:02:57,454 - INFO - App finished rendering.
+2025-05-26 19:03:01,273 - INFO - Environment variables loaded.
+2025-05-26 19:03:01,277 - INFO - Form submitted. Collecting incident data.
+2025-05-26 19:03:01,277 - INFO - Incident data collected: {'severity': 'P0 - Critical', 'impacted_services': [], 'customer_impact': '', 'root_cause': '', 'mitigation': 'asdsa', 'eta': '', 'message_type': 'Initial notification', 'tone': 'Semi-technical'}
+2025-05-26 19:03:01,278 - INFO - Generating message using Gemini...
+2025-05-26 19:03:13,743 - INFO - Message generated successfully.
+2025-05-26 19:03:13,745 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 19:03:13,748 - INFO - App finished rendering.
