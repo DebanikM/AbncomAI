@@ -1148,3 +1148,109 @@
 2025-05-26 20:48:29,830 - INFO - Message generated successfully.
 2025-05-26 20:48:37,493 - INFO - Displaying generated message and metrics from session state.
 2025-05-26 20:48:37,496 - INFO - App finished rendering.
+2025-05-26 20:49:08,966 - INFO - Environment variables loaded.
+2025-05-26 20:49:08,973 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 20:49:08,979 - INFO - App finished rendering.
+2025-05-26 20:49:10,028 - INFO - Environment variables loaded.
+2025-05-26 20:49:10,033 - INFO - Form submitted. Collecting incident data.
+2025-05-26 20:49:10,034 - INFO - Incident data collected: {'severity': 'P1 - High', 'impacted_services': ['Threat Detection', 'Account Protection'], 'customer_impact': 'ss', 'root_cause': '', 'mitigation': 'ss', 'eta': 'ss', 'message_type': 'Initial notification', 'tone': 'Technical'}
+2025-05-26 20:49:10,034 - INFO - Generating message using Gemini...
+2025-05-26 20:49:19,679 - INFO - Message generated successfully.
+2025-05-26 20:49:24,855 - INFO - Environment variables loaded.
+2025-05-26 20:49:24,861 - INFO - Form submitted. Collecting incident data.
+2025-05-26 20:49:24,862 - INFO - Incident data collected: {'severity': 'P1 - High', 'impacted_services': ['Threat Detection', 'Account Protection'], 'customer_impact': 'ss', 'root_cause': '', 'mitigation': 'ss', 'eta': 'ss', 'message_type': 'Initial notification', 'tone': 'Technical'}
+2025-05-26 20:49:24,863 - INFO - Generating message using Gemini...
+2025-05-26 20:49:37,508 - INFO - Message generated successfully.
+2025-05-26 20:49:44,409 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 20:49:44,414 - INFO - App finished rendering.
+2025-05-26 20:51:39,040 - INFO - Environment variables loaded.
+2025-05-26 20:51:39,047 - INFO - App finished rendering.
+2025-05-26 20:52:27,857 - INFO - Environment variables loaded.
+2025-05-26 20:52:27,863 - INFO - App finished rendering.
+2025-05-26 20:52:54,085 - INFO - Environment variables loaded.
+2025-05-26 20:52:54,093 - INFO - App finished rendering.
+2025-05-26 20:53:16,952 - INFO - Environment variables loaded.
+2025-05-26 20:53:16,966 - INFO - App finished rendering.
+2025-05-26 20:55:27,723 - INFO - Environment variables loaded.
+2025-05-26 20:55:27,729 - INFO - App finished rendering.
+2025-05-26 20:56:03,781 - INFO - Environment variables loaded.
+2025-05-26 20:56:03,788 - INFO - App finished rendering.
+2025-05-26 20:58:01,676 - INFO - Environment variables loaded.
+2025-05-26 20:58:01,683 - INFO - App finished rendering.
+2025-05-26 20:58:30,487 - INFO - Environment variables loaded.
+2025-05-26 20:58:30,494 - INFO - App finished rendering.
+2025-05-26 20:58:32,094 - INFO - Environment variables loaded.
+2025-05-26 20:58:32,099 - INFO - App finished rendering.
+2025-05-26 20:58:33,042 - INFO - Environment variables loaded.
+2025-05-26 20:58:33,047 - INFO - App finished rendering.
+2025-05-26 20:58:34,372 - INFO - Environment variables loaded.
+2025-05-26 20:58:34,381 - INFO - App finished rendering.
+2025-05-26 20:58:34,819 - INFO - Environment variables loaded.
+2025-05-26 20:58:34,825 - INFO - App finished rendering.
+2025-05-26 20:58:35,878 - INFO - Environment variables loaded.
+2025-05-26 20:58:35,884 - INFO - App finished rendering.
+2025-05-26 20:58:36,536 - INFO - Environment variables loaded.
+2025-05-26 20:58:36,544 - INFO - App finished rendering.
+2025-05-26 20:58:37,261 - INFO - Environment variables loaded.
+2025-05-26 20:58:37,269 - INFO - App finished rendering.
+2025-05-26 20:59:20,998 - INFO - Environment variables loaded.
+2025-05-26 20:59:21,007 - INFO - App finished rendering.
+2025-05-26 21:01:57,371 - INFO - Environment variables loaded.
+2025-05-26 21:01:57,379 - INFO - App finished rendering.
+2025-05-26 21:01:59,050 - INFO - Environment variables loaded.
+2025-05-26 21:01:59,057 - INFO - App finished rendering.
+2025-05-26 21:01:59,348 - INFO - Environment variables loaded.
+2025-05-26 21:01:59,352 - INFO - App finished rendering.
+2025-05-26 21:02:01,281 - INFO - Environment variables loaded.
+2025-05-26 21:02:01,289 - INFO - App finished rendering.
+2025-05-26 21:02:05,341 - INFO - Environment variables loaded.
+2025-05-26 21:02:05,348 - INFO - App finished rendering.
+2025-05-26 21:02:11,658 - INFO - Environment variables loaded.
+2025-05-26 21:02:11,665 - INFO - App finished rendering.
+2025-05-26 21:02:16,468 - INFO - Environment variables loaded.
+2025-05-26 21:02:16,475 - INFO - App finished rendering.
+2025-05-26 21:02:23,063 - INFO - Environment variables loaded.
+2025-05-26 21:02:23,070 - INFO - App finished rendering.
+2025-05-26 21:02:24,356 - INFO - Environment variables loaded.
+2025-05-26 21:02:24,363 - INFO - Form submitted. Collecting incident data.
+2025-05-26 21:02:24,363 - INFO - Incident data collected: {'severity': 'P1 - High', 'impacted_services': ['Threat Detection', 'Account Protection'], 'customer_impact': 'Customers are experiencing increased latency and intermittent inaccuracies in real-time threat detection notifications, along with degraded effectiveness in automated account protection mechanisms. This disruption may expose customer accounts to heightened risk of undetected security threats or unauthorized activities', 'root_cause': 'Preliminary root-cause analysis indicates a regression introduced by the recent deployment (v3.12.4) affecting our threat detection ML model. Specifically, performance profiling revealed increased inference latency and elevated false-negative detection rates, linked to suboptimal resource allocation and inefficiencies in anomaly-detection pipelines.', 'mitigation': 'Rollback: Initiating rollback to the previously stable threat detection ML model version (v3.12.3) to restore baseline functionality.\n\nMonitoring Enhancement: Increasing observability by implementing additional real-time telemetry to pinpoint latency bottlenecks and anomaly detection inefficiencies.\n\nHotfix Deployment: Deploying targeted hotfixes addressing identified deficiencies within the ML inference and pipeline orchestration components.\n\nCustomer Notification: Issuing technical advisories to affected customers recommending additional vigilance and temporary manual review protocols during mitigation phase.', 'eta': 'Incident resolution anticipated within approximately 3 hours (ETA: 7:00 PM ET). Incremental performance restoration and system stabilization will occur progressively within this window, with ongoing monitoring to validate efficacy of implemented solutions.', 'message_type': 'Initial notification', 'tone': 'Semi-technical'}
+2025-05-26 21:02:24,365 - INFO - Generating message using Gemini...
+2025-05-26 21:02:32,530 - INFO - Message generated successfully.
+2025-05-26 21:02:40,660 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 21:02:40,665 - INFO - App finished rendering.
+2025-05-26 21:02:50,047 - INFO - Environment variables loaded.
+2025-05-26 21:02:50,059 - INFO - App finished rendering.
+2025-05-26 21:03:22,619 - INFO - Environment variables loaded.
+2025-05-26 21:03:22,627 - INFO - App finished rendering.
+2025-05-26 21:03:27,169 - INFO - Environment variables loaded.
+2025-05-26 21:03:27,179 - INFO - App finished rendering.
+2025-05-26 21:03:28,181 - INFO - Environment variables loaded.
+2025-05-26 21:03:28,188 - INFO - App finished rendering.
+2025-05-26 21:03:28,585 - INFO - Environment variables loaded.
+2025-05-26 21:03:28,593 - INFO - App finished rendering.
+2025-05-26 21:03:29,518 - INFO - Environment variables loaded.
+2025-05-26 21:03:29,524 - INFO - App finished rendering.
+2025-05-26 21:03:29,953 - INFO - Environment variables loaded.
+2025-05-26 21:03:29,960 - INFO - App finished rendering.
+2025-05-26 21:03:32,649 - INFO - Environment variables loaded.
+2025-05-26 21:03:32,658 - INFO - App finished rendering.
+2025-05-26 21:03:38,679 - INFO - Environment variables loaded.
+2025-05-26 21:03:38,687 - INFO - App finished rendering.
+2025-05-26 21:03:39,317 - INFO - Environment variables loaded.
+2025-05-26 21:03:39,324 - INFO - Form submitted. Collecting incident data.
+2025-05-26 21:03:39,324 - INFO - Incident data collected: {'severity': 'P0 - Critical', 'impacted_services': ['Threat Detection'], 'customer_impact': 'asd', 'root_cause': 'asd', 'mitigation': 'dasd', 'eta': 'sdfsa', 'message_type': 'Status update', 'tone': 'Semi-technical'}
+2025-05-26 21:03:39,325 - INFO - Generating message using Gemini...
+2025-05-26 21:03:50,664 - INFO - Message generated successfully.
+2025-05-26 21:03:56,924 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 21:03:56,929 - INFO - App finished rendering.
+2025-05-26 21:04:07,785 - INFO - Environment variables loaded.
+2025-05-26 21:04:07,793 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 21:04:07,799 - INFO - App finished rendering.
+2025-05-26 21:04:08,400 - INFO - Environment variables loaded.
+2025-05-26 21:04:08,408 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 21:04:08,415 - INFO - App finished rendering.
+2025-05-26 21:04:08,950 - INFO - Environment variables loaded.
+2025-05-26 21:04:08,958 - INFO - Displaying generated message and metrics from session state.
+2025-05-26 21:04:08,965 - INFO - App finished rendering.
+2025-05-26 23:18:31,249 - INFO - Environment variables loaded.
+2025-05-26 23:18:31,265 - INFO - App finished rendering.
