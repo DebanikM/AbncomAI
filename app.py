@@ -79,14 +79,22 @@ with col1:
     
     # Impacted services
     st.markdown("Impacted Services :red[*]") # Use markdown for the label here
-    services = {
-        "Email Analysis": st.checkbox("Email Analysis"),
-        "Threat Detection": st.checkbox("Threat Detection"),
-        "Account Protection": st.checkbox("Account Protection"),
-        "API": st.checkbox("API"),
-        "Dashboard": st.checkbox("Dashboard"),
-        "Reporting": st.checkbox("Reporting")
-    }
+    
+    # Create two columns for the checkboxes
+    service_col1, service_col2 = st.columns(2)
+
+    services = {}
+    
+    # Distribute checkboxes across the two columns
+    with service_col1:
+        services["Email Analysis"] = st.checkbox("Email Analysis")
+        services["Account Protection"] = st.checkbox("Account Protection")
+        services["Dashboard"] = st.checkbox("Dashboard")
+
+    with service_col2:
+        services["Threat Detection"] = st.checkbox("Threat Detection")
+        services["API"] = st.checkbox("API")
+        services["Reporting"] = st.checkbox("Reporting")
     
     # Check if at least one service is selected
     are_services_selected = any(services.values())
